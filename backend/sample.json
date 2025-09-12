@@ -1,0 +1,25 @@
+{
+    "customer_name": "Ali Rezaei",
+    "platform": "Uber Eats",
+    "restaurant":"natalino", 
+    "subtotal":37.96,
+    "tax":5.69,
+    "total":43.65,
+    "items": [
+        {
+            "name": "Cheese Burger",
+            "quantity": 2,
+            "price": 5.99
+        },
+        {
+            "name": "French Fries",
+            "quantity": 1,
+            "price": 2.49
+        },
+        {
+            "name": "Coca-Cola",
+            "quantity": 1,
+            "price": 1.99
+        }
+    ]
+}

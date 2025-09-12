@@ -1,0 +1,14 @@
+{
+    "name": "AI Source Fusion",
+    "version": "1.0.0",
+    "description": "API Usage Documention",
+    "title": "aisourcefusion api documention",
+    "url": "http://18.190.26.248" , 
+    "sampleUrl": "http://18.190.26.248" ,
+    "order": [
+        "Success",
+        "Error",
+        "Define"
+    ] , 
+    "usage":"apidoc -i ./routes/api -o www/apidoc"
+}

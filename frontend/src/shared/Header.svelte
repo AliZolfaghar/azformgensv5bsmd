@@ -2,12 +2,39 @@
     import {link} from 'svelte-spa-router'
     import active from 'svelte-spa-router/active'
     import { userStore } from '../stores/userStore.js';
+    import { onMount } from 'svelte';
+    import axios from '../lib/axios.js';
 
+
+
+    const loadUserInfo = async () => {
+      axios.get('/v1/auth/userinfo')
+        .then(response => {
+          userStore.set(response.data);
+          console.log('User info loaded:', response.data);
+        })
+        .catch(error => {
+          console.error('Failed to load user info:', error);
+        });
+    }
+
+    onMount( () => {
+        // console.log('header mounted');
+        if($userStore.id) {
+            // console.log('User is logged in:', $userStore.id);
+        } else {
+            // console.log('User is not logged in');
+            // get userinfo 
+            loadUserInfo();
+        }
+    });
 
 
 
 
 </script>
+
+<!-- {$userStore.id ? $userStore.id : 'not logged in'} -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary rtl">
   <a class="navbar-brand" href="/" use:link>

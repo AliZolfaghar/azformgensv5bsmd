@@ -1,3 +1,4 @@
+
 # ---> Node
 # Logs
 logs
@@ -25,7 +26,8 @@ coverage
 *.lcov
 ./db
 ./db/*
-
+./localdb
+./localdb/*
 
 # nyc test coverage
 .nyc_output

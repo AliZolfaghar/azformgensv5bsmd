@@ -10,7 +10,7 @@
       .get("/v1/auth/userinfo")
       .then((response) => {
         userStore.set(response.data);
-        console.log("User info loaded:", response.data);
+        // console.log("User info loaded:", response.data);
       })
       .catch((error) => {
         console.error("Failed to load user info:", error.message);
@@ -86,8 +86,7 @@
               &nbsp; {$userStore.displayName} &nbsp;
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-right" href="/usercp" use:link
-                >page 1</a
+              <a class="dropdown-item text-right" href="/user/setting" use:link> Settings </a
               >
 
               <div>

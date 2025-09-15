@@ -39,17 +39,23 @@
 
 </script>
 
+<div class="bg">
+
+
+
 <div class="row justify-content-center">
-    <div class="col-md-6 col-sm-8 col-lg-5 col-xl-4">
-        <div class="card shadow border " >
+    <div class="col-sm-8 col-md-6 col-lg-5 col-xl-4" style="max-width: 400px;">
+        <div class="card shadow border animated fadeInDown faster" >
             <div class="card-header bg-primary text-white text-center h4">
                 Login
             </div>
             <div class="card-body p-4">
                 <div class="row mb-3 ">
                     <div class="input-group">
-                        <div class="input-group-text">
-                            <i class="fa fa-user mr-2"></i>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user mr-2"></i>
+                            </span>
                         </div>
                         <input placeholder="username" id="username" type="text" class="form-control " bind:value={formData.userName}>
                     </div>
@@ -57,13 +63,15 @@
 
                 <div class="row mb-3 ">
                     <div class="input-group">
-                        <div class="input-group-text">
-                            <i class="fa fa-lock mr-2"></i>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-lock mr-2"></i>
+                            </span>
                         </div>
                         
                         <input placeholder="password" onkeypress={handleKeyPress} id="password" type="{ showPassword ? 'text' : 'password' }" class="form-control" bind:value={formData.password} />
 
-                        <div class="input-group-text">
+                        <div class="input-group-append">
                              <button aria-label="show password" type="button" class="btn btn-sm btn-primary btn-raised ripple " onclick={() => showPassword = !showPassword} >
                                  <i  class="fa pointer { showPassword ? 'fa-eye-slash' : 'fa-eye' } " ></i>
                              </button>
@@ -85,3 +93,23 @@
         </div>
     </div>
 </div>
+
+</div>
+
+<style>
+    .bg{
+        
+        background-image: url('/images/login-bg.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    
+
+    top: 0px;
+    left: 0px;
+    padding-top: 100px;
+    }
+</style>

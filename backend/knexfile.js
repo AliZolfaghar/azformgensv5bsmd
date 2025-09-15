@@ -1,6 +1,6 @@
-import config from './config.js';
+// import process.env from './process.env.js';
 import { join } from 'path';
-const localdbPath = join(process.cwd(), '/localdb/localdb.db');
+const localdbPath = join(process.cwd(), process.env.LOCALDB_PATH);
 
 
 export default {
@@ -27,10 +27,10 @@ export default {
   production: {
     client: 'mysql2',
     connection: {
-      host: config.DB_HOST,
-      user: config.DB_USER,
-      password: config.DB_PASSWORD,
-      database: config.DB_NAME,
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       charset: 'utf8mb4'
     },
     migrations: {
@@ -44,10 +44,10 @@ export default {
   production_mssql: {
     client: 'mssql',
     connection: {
-        host : config.DB_HOST ,
-        user : config.DB_USER ,
-        password : config.DB_PASSWORD ,
-        database : config.DB_DATABASE ,
+        host : process.env.DB_HOST ,
+        user : process.env.DB_USER ,
+        password : process.env.DB_PASSWORD ,
+        database : process.env.DB_DATABASE ,
         requestTimeout  : 30000 ,
         onnectionTimeout: 180000 ,  // for timeout setting
         options: {

@@ -29,6 +29,15 @@ const routes = {
         asyncComponent: () => import('./pages/Posts.svelte')
     }),
 
+
+
+    '/user/setting/:subpage?': wrap({
+        asyncComponent: () => import('./pages/UserSetting.svelte')
+    }),
+
+
+
+    // catch all other routes as notfound page 
     '*': wrap({
         asyncComponent: () => import('./pages/NotFound.svelte')
     }),

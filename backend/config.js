@@ -5,6 +5,8 @@ export default {
     APP_MODE : 'dve' , 
     APP_URL : 'http://localhost' , 
 
+    LOCALDB_FILENAME : process.env.LOCALDB_FILENAME ,
+
     DB_HOST     : "127.0.0.1", 
     DB_USER     : "aiuser",
     DB_PASSWORD : "Ali@1432",

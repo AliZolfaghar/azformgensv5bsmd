@@ -1,15 +1,21 @@
 import { Router } from "express";
-import bcrypt from "bcrypt";
-import config from "../../../../config.js";
-import db from "../../../../db.js";
+// import bcrypt from "bcrypt";
+import config from "#lib/config.js";
+import db from "#lib/db.js";
 import jwt from "jsonwebtoken";
 import { captchaCache } from "#lib/appCache.js";
 import { checkLogin } from "#lib/checkLogin.js";
+
 
 const router = Router();
 
 // /api/v1/auth/userinfo
 router.get( "/api/v1/auth/userinfo" , checkLogin , ( req , res ) => {
+  res.json(req.user);
+})
+
+router.get( "/api/v1/user/login-history" , checkLogin , ( req , res ) => {
+
   res.json(req.user);
 })
 

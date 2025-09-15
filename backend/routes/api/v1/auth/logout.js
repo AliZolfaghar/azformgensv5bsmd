@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import bcrypt from 'bcrypt';
-import config from '../../../../config.js';
-import db from '../../../../db.js';
-import jwt from 'jsonwebtoken';
-import { captchaCache , tokenCache } from '#lib/appCache.js';
+// import config from '../../../../config.js';
+// import db from '../../../../db.js';
+// import jwt from 'jsonwebtoken';
+// import { captchaCache , tokenCache } from '#lib/appCache.js';
 import { checkLogin } from '#lib/checkLogin.js';
 
 const router = Router();

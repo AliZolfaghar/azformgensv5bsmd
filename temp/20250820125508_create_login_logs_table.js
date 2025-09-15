@@ -1,11 +1,5 @@
 
-export const up = function(knex) {
-
-    // table : tbl_login_logs 
-    // id
-    // user_id 
-    // login_date 
-    // ip_address      
+export const up = function(knex) {    
     return knex.schema.createTable('tbl_login_logs', function(table) {
         table.increments('id').primary(); 
         table.integer('user_id').nullable();        

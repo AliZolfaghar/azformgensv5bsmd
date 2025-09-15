@@ -1,4 +1,4 @@
-import config from './config.js';
+import config from '#lib/config.js';
 import express from 'express';
 import { readdir } from 'fs/promises';
 import path from 'path';

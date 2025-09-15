@@ -1,5 +1,5 @@
 // save logs to database 
-import db from '../db.js' ;
+import db from './db.js' ;
 
 /**
  * Save a login log to the database

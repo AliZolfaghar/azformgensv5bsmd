@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import config from '../config.js';
-import db from '../db.js';
+import config from './config.js';
+import db from './db.js';
 
 // fail messages 
 const failMessage = {

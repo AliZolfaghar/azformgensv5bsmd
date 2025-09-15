@@ -10,7 +10,7 @@
         localStorage.removeItem('authToken');
         userStore.set({
             id: null,
-            name: '',
+            displayName: '',
             email: '',
         });
         replace('/login');

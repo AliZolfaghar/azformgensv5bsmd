@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import bcrypt from 'bcrypt';
-import config from '../../../../config.js';
-import {localdb} from '../../../../db.js';
+import config from '#lib/config.js';
+import db from '#lib/db.js';
 import jwt from 'jsonwebtoken';
 import { captchaCache , tokenCache } from '#lib/appCache.js';
 import { saveLoginLog } from '#lib/logger.js';
@@ -54,7 +54,7 @@ router.post('/api/v1/auth/login' , validateLogin , async ( req , res ) => {
     console.log('username and pass :' , userName , password); 
 
     // get user from database
-    const user = await localdb('fg_users').where('email', userName).orWhere('userName', userName).first(); // find user in database with email or username
+    const user = await db('fg_users').where('email', userName).orWhere('userName', userName).first(); // find user in database with email or username
 
     // handle user not found
     if (!user) return res.status(400).json({ error: 'username or password is not correct.' });    

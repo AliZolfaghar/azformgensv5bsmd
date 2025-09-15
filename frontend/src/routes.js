@@ -32,7 +32,7 @@ const routes = {
 
 
     '/user/setting/:subpage?': wrap({
-        asyncComponent: () => import('./pages/UserSetting.svelte')
+        asyncComponent: () => import('./pages/user/UserSetting.svelte')
     }),
 
 

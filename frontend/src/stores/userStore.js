@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 
 export const userStore = writable({
     id: null,
-    name: '',
+    displayName: '',
     email: '',
     // add other user fields as needed
 });

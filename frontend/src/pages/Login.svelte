@@ -8,9 +8,19 @@
     let formData = $state({ userName:'', password:'' });
     let showPassword = $state(false);
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            login();
+        }
+    };
+
     // document this function 
     const login = async () => {
-
+        if (!formData.userName || !formData.password) {
+            toastr.error('Please enter username and password');
+            return;
+        }
+        
         try {
             const response = await axios.post( '/v1/auth/login', formData);
             toastr.success('Login successful');
@@ -20,7 +30,7 @@
             const userInfoResponse = await axios.get('/v1/auth/userinfo');
             userStore.set(userInfoResponse.data);
             // redirect to dashboard
-            replace('/home');
+            replace('/home');            
         } catch (error) {
             console.error('Login failed:', error);
             toastr.error(error.message || 'Login failed');
@@ -28,8 +38,6 @@
     }
 
 </script>
-
-{ JSON.stringify(formData)}
 
 <div class="row justify-content-center">
     <div class="col-md-6 col-sm-8 col-lg-5 col-xl-4">
@@ -39,34 +47,26 @@
             </div>
             <div class="card-body p-4">
                 <div class="row mb-3 ">
-                    <label for="username"> username : </label>
-                    <!-- add a user name icon to input -->
                     <div class="input-group">
                         <div class="input-group-text">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-user mr-2"></i>
                         </div>
-                        <input id="username" type="text" class="form-control p-2" bind:value={formData.userName}>
+                        <input placeholder="username" id="username" type="text" class="form-control " bind:value={formData.userName}>
                     </div>
                 </div>
 
                 <div class="row mb-3 ">
-                    <label for="password"> password : </label>
-                    <!-- add a lock icon to input -->
                     <div class="input-group">
                         <div class="input-group-text">
-                            <i class="fa fa-lock"></i>
+                            <i class="fa fa-lock mr-2"></i>
                         </div>
-                        <!-- login if user press enter in password field -->
-                        <input onkeypress={(e)=>{
-                            if(e.key === 'Enter'){
-                                login();
-                            }
-                        }} id="password" type="{ showPassword ? 'text' : 'password' }" class="form-control p-2" bind:value={formData.password}>
-                        <!-- add a toggle show password after password input -->
+                        
+                        <input placeholder="password" onkeypress={handleKeyPress} id="password" type="{ showPassword ? 'text' : 'password' }" class="form-control" bind:value={formData.password} />
+
                         <div class="input-group-text">
-                            <!-- svelte-ignore a11y_click_events_have_key_events -->
-                            <!-- svelte-ignore a11y_no_static_element_interactions -->
-                            <i  class="fa pointer { showPassword ? 'fa-eye-slash' : 'fa-eye' }" onclick={() => showPassword = !showPassword}></i>
+                             <button aria-label="show password" type="button" class="btn btn-sm btn-primary btn-raised ripple " onclick={() => showPassword = !showPassword} >
+                                 <i  class="fa pointer { showPassword ? 'fa-eye-slash' : 'fa-eye' } " ></i>
+                             </button>
                         </div>
                     </div>
 

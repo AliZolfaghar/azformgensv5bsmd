@@ -1,18 +1,20 @@
 <script>
     import { onMount } from 'svelte';
+    import { location } from 'svelte-spa-router';
+    import Router from 'svelte-spa-router';
+    import routes from './routes';
 
-    // add fadeup animation
-    import { fade, fly } from 'svelte/transition';
 
     import Header from './shared/Header.svelte';
-
-    import Router from 'svelte-spa-router';
-    import { location } from 'svelte-spa-router';
-    import routes from './routes';
 
 
 
 </script>
+
+
+<!-- <svelte:head>
+	<script src="https://cdn.tailwindcss.com"></script>
+</svelte:head> -->
 
 <main>
     <Header />

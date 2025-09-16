@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body{
   background-image: url('/images/login-bg.jpg');
   background-size: cover;
@@ -21,6 +23,7 @@ body{
 .w-130px {
   width: 130px;
 }
+
 
 
 .w-150px {

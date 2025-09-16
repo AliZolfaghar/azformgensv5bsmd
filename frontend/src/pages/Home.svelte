@@ -55,11 +55,16 @@
         <Card title="card title">
             <h3>Card Data</h3>
         </Card>    
-    </div>
 
+        
+    </div>
+    
     <div class="col-md-3">
         <div class="shadow p-3 border ">
             test
+        </div>
+        <div class="bg-yellow-400 rounded-t-2xl rounded-b-2xl ">
+            tailwind css 
         </div>
     </div>
 
@@ -74,5 +79,6 @@
 
 
 </div>
+
 
 

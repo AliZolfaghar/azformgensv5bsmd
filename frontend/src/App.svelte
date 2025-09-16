@@ -18,7 +18,7 @@
     <Header />
     
     <div class="container-fluid mt-4 " >
-        <Router {routes} />
+        <Router {routes} restoreScrollState={true} />
     </div>
     
 </main>

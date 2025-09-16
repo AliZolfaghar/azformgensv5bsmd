@@ -25,6 +25,7 @@ const axiosInstance = axios.create({
   timeout: 5000,
 });
 
+
 axiosInstance.interceptors.request.use( ( config ) => {
   // console.log('api interceptor runs')
   const authToken = localStorage.getItem('authToken');

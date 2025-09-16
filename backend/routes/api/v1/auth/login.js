@@ -59,7 +59,6 @@ router.post('/api/v1/auth/login' , validateLogin , async ( req , res ) => {
     // handle user not found
     if (!user) return res.status(400).json({ error: 'username or password is not correct.' });    
 
-    // console.log('user is :' , user)
 
     // compare posted password with valid password in database
     const isPasswordMatch = await bcrypt.compare(password, user.password);

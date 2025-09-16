@@ -4,21 +4,9 @@
   import { userStore } from "../stores/userStore.js";
   import { onMount } from "svelte";
   import axios from "../lib/axios.js";
+  import { loadUserInfo } from "../lib/loadUserInfo.js";
 
-  const loadUserInfo = async () => {
-    axios
-      .get("/v1/auth/userinfo")
-      .then((response) => {
-        userStore.set(response.data);
-        // console.log("User info loaded:", response.data);
-      })
-      .catch((error) => {
-        console.error("Failed to load user info:", error.message);
-      });
-  };
-
-  onMount(() => {
-    // console.log('header mounted');
+  onMount(() => {    
     if ($userStore.id) {
       // console.log('User is logged in:', $userStore.id);
     } else {
@@ -122,3 +110,4 @@
     </form>
   </div>
 </nav>
+

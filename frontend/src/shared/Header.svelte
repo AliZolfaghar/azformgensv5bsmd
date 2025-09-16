@@ -4,16 +4,13 @@
   import { userStore } from "../stores/userStore.js";
   import { onMount } from "svelte";
   import axios from "../lib/axios.js";
-  import { loadUserInfo } from "../lib/loadUserInfo.js";
+  // import { loadUserInfo } from "../lib/loadUserInfo.js";
 
   onMount(() => {    
-    if ($userStore.id) {
-      // console.log('User is logged in:', $userStore.id);
-    } else {
-      // console.log('User is not logged in');
-      // get userinfo
-      loadUserInfo();
-    }
+    // if ($userStore.id) {
+    // } else {
+      // loadUserInfo();
+    // }
   });
 </script>
 
@@ -111,3 +108,8 @@
   </div>
 </nav>
 
+<style>
+  .collapse{
+    visibility: inherit;
+  }
+</style>

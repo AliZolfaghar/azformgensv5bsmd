@@ -10,6 +10,7 @@ let user = get(userStore);
 const checkUserLogin = (detail) => {
     console.log(detail)
     console.log(user)
+    return true 
 }
 
 const routes = {    

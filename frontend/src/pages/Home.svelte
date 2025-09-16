@@ -8,6 +8,8 @@
     import Modal from '../components/Modal.svelte';
     import NumericInput from '../components/NumericInput.svelte';
     // import toastr from '../assets/toastr/_toastr.js';
+    import { t } from '../lib/translate';
+  import ChangeLanguage from '../shared/changeLanguage.svelte';
 
     let showModal1 = $state(false);
 
@@ -54,6 +56,13 @@
     <div class="col-md-3">
         <Card title="card title">
             <h3>Card Data</h3>
+            <br>
+            <ChangeLanguage />
+            <br>
+            translate : 
+            {t('welcome')} <br>
+            {t('fooBar')} <br>
+
         </Card>    
 
         

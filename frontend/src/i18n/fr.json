@@ -1,0 +1,9 @@
+{
+    "welcome": "Bienvenue",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "submit": "Soumettre",
+    "cancel": "Annuler"
+  }

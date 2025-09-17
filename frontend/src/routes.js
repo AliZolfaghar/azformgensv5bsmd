@@ -13,6 +13,10 @@ const checkUserLogin = (detail) => {
     return true 
 }
 
+
+
+import Snippet from './pages/Snippet.svelte'
+
 const routes = {    
 
     '/': wrap({
@@ -47,6 +51,7 @@ const routes = {
     }),
 
 
+    '/snippet' : Snippet , 
 
     // catch all other routes as notfound page 
     '*': wrap({

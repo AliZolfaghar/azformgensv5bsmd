@@ -4,19 +4,15 @@
   import { userStore } from "../stores/userStore.js";
   import { onMount } from "svelte";
   import axios from "../lib/axios.js";
-  // import { loadUserInfo } from "../lib/loadUserInfo.js";
+  import ChangeLanguage from "./changeLanguage.svelte";
 
   onMount(() => {    
-    // if ($userStore.id) {
-    // } else {
-      // loadUserInfo();
-    // }
   });
 </script>
 
 <!-- {$userStore.id ? $userStore.id : 'not logged in'} -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary rtl">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
   <a class="navbar-brand" href="/" use:link>
     <img
       alt="Logo"
@@ -105,6 +101,10 @@
         >Search</button
       >
     </form>
+
+    <div>
+      <ChangeLanguage />
+    </div>
   </div>
 </nav>
 
